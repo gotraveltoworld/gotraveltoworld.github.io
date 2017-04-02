@@ -22,6 +22,7 @@ categories: Javascript
 		* symbol <- ES6新增
 
     * __"typeof"的回傳如下：__
+
 	```Javascript
 	//本項程式碼為書中所論述
 	typeof undefined     === "undefined"; // true
@@ -37,6 +38,7 @@ categories: Javascript
 	// This is a famous bug.
 	typeof null === "object"; // true
 	```
+
 2. undefined vs undeclared
 	* undefined : 變數沒有賦予值
 	* undeclared : 變數沒有宣告
@@ -58,34 +60,35 @@ categories: Javascript
 		* 當比較雙方有0, "", []，這三種類型存在時，慎重考慮使用寬鬆比較。
 
 	* 測試範例(False-y Comparisons)
+
 	```Javascript
-		"0" == null;			// false
-		"0" == undefined;		// false
-		"0" == false;			// true -- UH OH!
-		"0" == NaN;				// false
-		"0" == 0;				// true
-		"0" == "";				// false
+	"0" == null;			// false
+	"0" == undefined;		// false
+	"0" == false;			// true -- UH OH!
+	"0" == NaN;				// false
+	"0" == 0;				// true
+	"0" == "";				// false
 
-		false == null;			// false
-		false == undefined;		// false
-		false == NaN;			// false
-		false == 0;				// true -- UH OH!
-		false == "";			// true -- UH OH!
-		false == [];			// true -- UH OH!
-		false == {};			// false
+	false == null;			// false
+	false == undefined;		// false
+	false == NaN;			// false
+	false == 0;				// true -- UH OH!
+	false == "";			// true -- UH OH!
+	false == [];			// true -- UH OH!
+	false == {};			// false
 
-		"" == null;				// false
-		"" == undefined;		// false
-		"" == NaN;				// false
-		"" == 0;				// true -- UH OH!
-		"" == [];				// true -- UH OH!
-		"" == {};				// false
+	"" == null;				// false
+	"" == undefined;		// false
+	"" == NaN;				// false
+	"" == 0;				// true -- UH OH!
+	"" == [];				// true -- UH OH!
+	"" == {};				// false
 
-		0 == null;				// false
-		0 == undefined;			// false
-		0 == NaN;				// false
-		0 == [];				// true -- UH OH!
-		0 == {};				// false
+	0 == null;				// false
+	0 == undefined;			// false
+	0 == NaN;				// false
+	0 == [];				// true -- UH OH!
+	0 == {};				// false
 	```
 
 	* 檢查`null`的範例(書中提供)
