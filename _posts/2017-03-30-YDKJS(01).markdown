@@ -122,4 +122,6 @@ categories: Javascript
 	}
 	```
 
-
+4. 後續持續研讀方向：
+	- 強制轉型基本轉換原則
+	- this(object) & scpoe
