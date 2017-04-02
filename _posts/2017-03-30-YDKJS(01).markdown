@@ -12,7 +12,7 @@ categories: Javascript
 
 導讀，型別與文法(簡單摘要)：
 1. 基本型別不是物件，例如：number, string, boolean。
-	* 七項基礎型別(附上範例)：
+	* 七項基礎型別：
 		* null
 		* undefined
 		* boolean
@@ -20,7 +20,8 @@ categories: Javascript
 		* string
 		* object
 		* symbol <- ES6新增
-    但是"typeof"的回傳如下：
+
+    * __"typeof"的回傳如下：__
 	```Javascript
 	//本項程式碼為書中所論述
 	typeof undefined     === "undefined"; // true
@@ -55,35 +56,36 @@ categories: Javascript
 	* 書中結論
 	    * 當比較雙方有true或是false時不要使用寬鬆比較。
 		* 當比較雙方有0, "", []，這三種類型存在時，慎重考慮使用寬鬆比較。
+
 	* 測試範例(False-y Comparisons)
 	```Javascript
-	"0" == null;			// false
-	"0" == undefined;		// false
-	"0" == false;			// true -- UH OH!
-	"0" == NaN;				// false
-	"0" == 0;				// true
-	"0" == "";				// false
+		"0" == null;			// false
+		"0" == undefined;		// false
+		"0" == false;			// true -- UH OH!
+		"0" == NaN;				// false
+		"0" == 0;				// true
+		"0" == "";				// false
 
-	false == null;			// false
-	false == undefined;		// false
-	false == NaN;			// false
-	false == 0;				// true -- UH OH!
-	false == "";			// true -- UH OH!
-	false == [];			// true -- UH OH!
-	false == {};			// false
+		false == null;			// false
+		false == undefined;		// false
+		false == NaN;			// false
+		false == 0;				// true -- UH OH!
+		false == "";			// true -- UH OH!
+		false == [];			// true -- UH OH!
+		false == {};			// false
 
-	"" == null;				// false
-	"" == undefined;		// false
-	"" == NaN;				// false
-	"" == 0;				// true -- UH OH!
-	"" == [];				// true -- UH OH!
-	"" == {};				// false
+		"" == null;				// false
+		"" == undefined;		// false
+		"" == NaN;				// false
+		"" == 0;				// true -- UH OH!
+		"" == [];				// true -- UH OH!
+		"" == {};				// false
 
-	0 == null;				// false
-	0 == undefined;			// false
-	0 == NaN;				// false
-	0 == [];				// true -- UH OH!
-	0 == {};				// false
+		0 == null;				// false
+		0 == undefined;			// false
+		0 == NaN;				// false
+		0 == [];				// true -- UH OH!
+		0 == {};				// false
 	```
 
 	* 檢查`null`的範例(書中提供)
