@@ -85,6 +85,7 @@ categories: Javascript
 	0 == [];				// true -- UH OH!
 	0 == {};				// false
 	```
+
 	* 檢查`null`的範例(書中提供)
 	```Javascript
 	var a = "42";
