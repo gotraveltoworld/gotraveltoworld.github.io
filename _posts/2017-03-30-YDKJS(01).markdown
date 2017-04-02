@@ -1,0 +1,118 @@
+---
+layout: post
+title:  "You Don't Know JS Series"
+date:   2017-04-02 21:31:38 +0800
+categories: Javascript
+---
+原文出處：[You Don't Know JS] : https://github.com/getify/You-Dont-Know-JS/
+
+前言：
+	本文紀錄自己研讀"You Don't Know JS"系列書籍的一些注意事項，寫下相關紀錄和資料彙整，以利未來查詢之用。
+> 本篇內容為個人心得，詳細請參照原文。
+
+導讀，型別與文法(簡單摘要)：
+1. 基本型別不是物件，例如：number, string, boolean。
+	* 七項基礎型別(附上範例)：
+		* null
+		* undefined
+		* boolean
+		* number
+		* string
+		* object
+		* symbol <- ES6新增
+    但是"typeof"的回傳如下：
+	```Javascript
+	//本項程式碼為書中所論述
+	typeof undefined     === "undefined"; // true
+	typeof true          === "boolean";   // true
+	typeof 42            === "number";    // true
+	typeof "42"          === "string";    // true
+	typeof { life: 42 }  === "object";    // true
+
+	// added in ES6!
+	typeof Symbol()      === "symbol";    // true
+	// Special type name
+	typeof function a(){ /* .. */ } === "function"; // true
+	// This is a famous bug.
+	typeof null === "object"; // true
+	```
+2. undefined vs undeclared
+	* undefined : 變數沒有賦予值
+	* undeclared : 變數沒有宣告
+
+    > JS在處理以上兩者時，都是回傳"ReferenceError: a is not defined"
+	> 即使使用"typeof"也是回傳undefined。
+	> __不過"typeof"仍然是作為檢查變數是否有安全宣告及賦值的有效檢查手段之一__。
+
+3. 比較(compare)：寬鬆比較(==) VS 嚴格比較(===)
+	[Loose Equals vs. Strict Equals]
+	* 整理要點：
+		* `NaN`不等於自身
+		* `+0`和`-0`彼此相等
+		* 當比較雙方有`true`或是`false`時不要使用寬鬆比較。原因是因為隱含的強制轉換順序，該順序會先將`boolean`轉換成`number`。
+		* 當比較雙方有0, "", []，這三種類型存在時，慎重考慮使用寬鬆比較。
+		* [相關比較查詢] : http://dorey.github.io/JavaScript-Equality-Table/
+	* 書中結論
+	    * 當比較雙方有true或是false時不要使用寬鬆比較。
+		* 當比較雙方有0, "", []，這三種類型存在時，慎重考慮使用寬鬆比較。
+	* 測試範例(False-y Comparisons)
+	```Javascript
+	"0" == null;			// false
+	"0" == undefined;		// false
+	"0" == false;			// true -- UH OH!
+	"0" == NaN;				// false
+	"0" == 0;				// true
+	"0" == "";				// false
+
+	false == null;			// false
+	false == undefined;		// false
+	false == NaN;			// false
+	false == 0;				// true -- UH OH!
+	false == "";			// true -- UH OH!
+	false == [];			// true -- UH OH!
+	false == {};			// false
+
+	"" == null;				// false
+	"" == undefined;		// false
+	"" == NaN;				// false
+	"" == 0;				// true -- UH OH!
+	"" == [];				// true -- UH OH!
+	"" == {};				// false
+
+	0 == null;				// false
+	0 == undefined;			// false
+	0 == NaN;				// false
+	0 == [];				// true -- UH OH!
+	0 == {};				// false
+	```
+	* 檢查`null`的範例(書中提供)
+	```Javascript
+	var a = "42";
+
+	// bad (will fail!):
+	if (a == true) {
+		// ..
+	}
+
+	// also bad (will fail!):
+	if (a === true) {
+		// ..
+	}
+
+	// good enough (works implicitly):
+	if (a) {
+		// ..
+	}
+
+	// better (works explicitly):
+	if (!!a) {
+		// ..
+	}
+
+	// also great (works explicitly):
+	if (Boolean( a )) {
+		// ..
+	}
+	```
+
+
