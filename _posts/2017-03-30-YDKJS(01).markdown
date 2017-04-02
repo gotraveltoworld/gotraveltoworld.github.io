@@ -92,6 +92,7 @@ categories: Javascript
 	```
 
 	* 檢查`null`的範例(書中提供)
+
 	```Javascript
 	var a = "42";
 
