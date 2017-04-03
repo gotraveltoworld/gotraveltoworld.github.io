@@ -26,7 +26,7 @@ description:
   本站紀錄個人一些筆記和心得，主要紀錄日常碰到的一些資訊技術的資料和閱讀筆記。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: gotraveltoworld
+twitter_username: traveler_future
 github_username:  gotraveltoworld
 
 # Build settings
