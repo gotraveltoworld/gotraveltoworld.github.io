@@ -4,7 +4,8 @@ title:  "You Don't Know JS Series"
 date:   2017-04-02 21:31:38 +0800
 categories: Javascript
 ---
-原文出處：[You Don't Know JS] : https://github.com/getify/You-Dont-Know-JS/
+原文出處：
+[You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/ "You Don't Know JS")
 
 前言：
 	本文紀錄自己研讀"You Don't Know JS"系列書籍的一些注意事項，寫下相關紀錄和資料彙整，以利未來查詢之用。
