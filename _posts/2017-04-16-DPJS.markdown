@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Design pattern for JS"
+date:   2017-04-16 23:00:38 +0800
+categories: Javascript
+---
+
+# Singleton
+>Practice the JS design pattern for singleton.<br>
+>Date : 2017-04-16<br>
+>Author : T.H. Lin<br>
+
+### Memo
+* Single instance is created by function(hide the 'new' operator).
+* Be careful the 'this' operator.
+
+### Code
+```Javascript
+// Singleton Design Pattern in JS example
+// Author : T.H. Lin
+
+let Singleton = function (tag) {
+  this.tag = tag;
+  this.instance = null;
+};
+
+Singleton.getInstance = function (tag) {
+  if (!this.instance) { // Checking object is exist or not.
+    console.log(tag); // Only show once time
+    this.instance = new Singleton(tag);//  Use 'new' operator in function.
+  }
+  return this.instance;
+}
+
+let a = Singleton.getInstance('sn1'); // Be careful the 'this' operator.
+let b = Singleton.getInstance('sn2');
+
+console.log(a);
+console.log(b);
+console.log(a === b); // a === b, because object only is created once time.
+```
+
