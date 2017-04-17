@@ -13,6 +13,7 @@ categories: Javascript
 ### Memo
 * Single instance is created by function(hide the 'new' operator).
 * Be careful the 'this' operator.
+* All scope only one instance(singleton).
 
 ### Code
 ```Javascript
